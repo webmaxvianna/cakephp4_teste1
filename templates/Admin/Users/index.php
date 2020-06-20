@@ -30,7 +30,7 @@
                     <td><?= h($user->username) ?></td>
                     <td><?= h($user->email) ?></td>
                     <td><?= h($user->senha) ?></td>
-                    <td><?= $user->has('role') ? $this->Html->link($user->role->id, ['controller' => 'Roles', 'action' => 'view', $user->role->id]) : '' ?></td>
+                    <td><?= $user->has('role') ? $this->Html->link($user->role->funcao, ['controller' => 'Roles', 'action' => 'view', $user->role->id]) : '' ?></td>
                     <td><?= h($user->created) ?></td>
                     <td><?= h($user->modified) ?></td>
                     <td class="actions">

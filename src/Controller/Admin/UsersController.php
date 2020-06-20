@@ -38,7 +38,7 @@ class UsersController extends AppController
     public function view($id = null)
     {
         $user = $this->Users->get($id, [
-            'contain' => ['Roles'],
+            'contain' => ['Roles', 'Addresses'],
         ]);
 
         $this->set(compact('user'));
@@ -75,7 +75,7 @@ class UsersController extends AppController
     public function edit($id = null)
     {
         $user = $this->Users->get($id, [
-            'contain' => [],
+            'contain' => ['Roles', 'Addresses'],
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $user = $this->Users->patchEntity($user, $this->request->getData());

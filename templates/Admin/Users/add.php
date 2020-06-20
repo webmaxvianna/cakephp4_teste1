@@ -20,7 +20,10 @@
                     echo $this->Form->control('nome');
                     echo $this->Form->control('username');
                     echo $this->Form->control('email');
-                    echo $this->Form->control('senha');
+                    echo $this->Form->control('senha', ['type' => 'password']);
+                    echo $this->Form->control('address.cidade');
+                    echo $this->Form->control('address.estado');
+                    echo $this->Form->control('address.pais');
                     echo $this->Form->control('role_id', ['options' => $roles]);
                 ?>
             </fieldset>

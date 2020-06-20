@@ -51,6 +51,10 @@ class UsersTable extends Table
             'foreignKey' => 'role_id',
             'joinType' => 'INNER',
         ]);
+        $this->hasOne('Addresses', [
+            'foreignKey' => 'user_id',
+            'dependent' => true,
+        ]);
     }
 
     /**
