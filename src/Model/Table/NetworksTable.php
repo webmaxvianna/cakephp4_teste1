@@ -42,7 +42,7 @@ class NetworksTable extends Table
         parent::initialize($config);
 
         $this->setTable('networks');
-        $this->setDisplayField('id');
+        $this->setDisplayField('redes_sociais');
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');

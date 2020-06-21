@@ -39,7 +39,7 @@
                     <td><?= $user->has('role') ? $this->Html->link($user->role->funcao, ['controller' => 'Roles', 'action' => 'view', $user->role->id]) : '' ?></td>
                 </tr>
                 <tr>
-                    <th><?= __('Address') ?></th>
+                    <th><?= __('Cidade') ?></th>
                     <td><?= $user->has('address') ? $user->address->cidade : '' ?></td>
                 </tr>                
                 <tr>
@@ -59,6 +59,35 @@
                     <td><?= h($user->modified) ?></td>
                 </tr>
             </table>
+            <div class="related">
+                <h4><?= __('Related Networks') ?></h4>
+                <?php if (!empty($user->networks)) : ?>
+                <div class="table-responsive">
+                    <table>
+                        <tr>
+                            <th><?= __('Id') ?></th>
+                            <th><?= __('Redes Sociais') ?></th>
+                            <th><?= __('Created') ?></th>
+                            <th><?= __('Modified') ?></th>
+                            <th class="actions"><?= __('Actions') ?></th>
+                        </tr>
+                        <?php foreach ($user->networks as $networks) : ?>
+                        <tr>
+                            <td><?= h($networks->id) ?></td>
+                            <td><?= h($networks->redes_sociais) ?></td>
+                            <td><?= h($networks->created) ?></td>
+                            <td><?= h($networks->modified) ?></td>
+                            <td class="actions">
+                                <?= $this->Html->link(__('View'), ['controller' => 'Networks', 'action' => 'view', $networks->id]) ?>
+                                <?= $this->Html->link(__('Edit'), ['controller' => 'Networks', 'action' => 'edit', $networks->id]) ?>
+                                <?= $this->Form->postLink(__('Delete'), ['controller' => 'Networks', 'action' => 'delete', $networks->id], ['confirm' => __('Are you sure you want to delete # {0}?', $networks->id)]) ?>
+                            </td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </table>
+                </div>
+                <?php endif; ?>
+            </div>
         </div>
     </div>
 </div>

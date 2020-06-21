@@ -25,6 +25,12 @@
                     echo $this->Form->control('address.estado');
                     echo $this->Form->control('address.pais');
                     echo $this->Form->control('role_id', ['options' => $roles]);
+                    echo $this->Form->control('networks._ids', [
+                        'options' => $networks,
+                        'type' => 'select',
+                        'multiple' => 'checkbox',
+                        'label' => 'Redes Sociais',
+                        ]);
                 ?>
             </fieldset>
             <?= $this->Form->button(__('Submit')) ?>

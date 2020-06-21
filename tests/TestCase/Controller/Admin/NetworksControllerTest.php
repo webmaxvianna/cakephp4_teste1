@@ -3,16 +3,16 @@ declare(strict_types=1);
 
 namespace App\Test\TestCase\Controller\Admin;
 
-use App\Controller\Admin\UsersController;
+use App\Controller\Admin\NetworksController;
 use Cake\TestSuite\IntegrationTestTrait;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Controller\Admin\UsersController Test Case
+ * App\Controller\Admin\NetworksController Test Case
  *
- * @uses \App\Controller\Admin\UsersController
+ * @uses \App\Controller\Admin\NetworksController
  */
-class UsersControllerTest extends TestCase
+class NetworksControllerTest extends TestCase
 {
     use IntegrationTestTrait;
 
@@ -22,10 +22,8 @@ class UsersControllerTest extends TestCase
      * @var array
      */
     protected $fixtures = [
-        'app.Users',
-        'app.Roles',
-        'app.Addresses',
         'app.Networks',
+        'app.Users',
         'app.NetworksUsers',
     ];
 

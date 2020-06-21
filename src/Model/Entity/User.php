@@ -40,6 +40,7 @@ class User extends Entity
         'created' => true,
         'modified' => true,
         'role' => true,
-        'address' => true,
+        'address' => true,        
+        'networks' => true,
     ];
 }
