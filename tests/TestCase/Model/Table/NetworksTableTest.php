@@ -3,21 +3,21 @@ declare(strict_types=1);
 
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\UsersTable;
+use App\Model\Table\NetworksTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\UsersTable Test Case
+ * App\Model\Table\NetworksTable Test Case
  */
-class UsersTableTest extends TestCase
+class NetworksTableTest extends TestCase
 {
     /**
      * Test subject
      *
-     * @var \App\Model\Table\UsersTable
+     * @var \App\Model\Table\NetworksTable
      */
-    protected $Users;
+    protected $Networks;
 
     /**
      * Fixtures
@@ -25,9 +25,8 @@ class UsersTableTest extends TestCase
      * @var array
      */
     protected $fixtures = [
+        'app.Networks',
         'app.Users',
-        'app.Roles',
-        'app.Addresses',
     ];
 
     /**
@@ -38,8 +37,8 @@ class UsersTableTest extends TestCase
     public function setUp(): void
     {
         parent::setUp();
-        $config = TableRegistry::getTableLocator()->exists('Users') ? [] : ['className' => UsersTable::class];
-        $this->Users = TableRegistry::getTableLocator()->get('Users', $config);
+        $config = TableRegistry::getTableLocator()->exists('Networks') ? [] : ['className' => NetworksTable::class];
+        $this->Networks = TableRegistry::getTableLocator()->get('Networks', $config);
     }
 
     /**
@@ -49,7 +48,7 @@ class UsersTableTest extends TestCase
      */
     public function tearDown(): void
     {
-        unset($this->Users);
+        unset($this->Networks);
 
         parent::tearDown();
     }
@@ -60,16 +59,6 @@ class UsersTableTest extends TestCase
      * @return void
      */
     public function testValidationDefault(): void
-    {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
-
-    /**
-     * Test buildRules method
-     *
-     * @return void
-     */
-    public function testBuildRules(): void
     {
         $this->markTestIncomplete('Not implemented yet.');
     }
